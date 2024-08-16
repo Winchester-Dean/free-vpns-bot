@@ -132,7 +132,7 @@ class DataBase:
 
     def get_users_id(self):
         self.cursor.execute(
-            "SELECT users_id FROM users"
+            "SELECT user_id FROM users"
         )
         return self.cursor.fetchall()
 

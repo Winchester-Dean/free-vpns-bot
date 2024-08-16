@@ -10,7 +10,7 @@ from .keyboards.keyboard import *
 
 @dp.message_handler(commands=["start"])
 async def start(msg: types.Message):
-    args = utils.get_args()
+    args = utils.get_args(msg)
     user_id = msg.from_user.id
     name = msg.from_user.first_name
     status = await utils.check_sub(user_id)

@@ -18,7 +18,7 @@ for channel in channels:
         )
     )
 
-inline_channels = InlineKeyboardMarkup()
+inline_channels = InlineKeyboardMarkup(row_width=2)
 inline_channels.add(*channels_list)
 inline_channels.add(
     InlineKeyboardButton(
@@ -27,19 +27,22 @@ inline_channels.add(
     )
 )
 
-menu_buttons_list = []
-texts = [
-    "Профиль", "Мои ключи",
-    "Получить ключ", "Реферальная система",
-    "Задания"
+one = [
+    KeyboardButton("Профиль"),
+    KeyboardButton("Мои ключи")
 ]
-for text in texts:
-    menu_buttons_list.append(
-        KeyboardButton(
-            text=text
-        )
-    )
 
-menu = ReplyKeyboardMarkup()
-menu.add(*menu_buttons_list)
+two = [
+    KeyboardButton("Получить ключ"),
+    KeyboardButton("Задания")
+]
 
+three = [
+    KeyboardButton("Реферальная система")
+]
+
+menu = ReplyKeyboardMarkup(
+    keyboard=[one, two, three],
+    resize_keyboard=True,
+    one_time_keyboard=False
+)
