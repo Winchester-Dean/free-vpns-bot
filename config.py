@@ -1,0 +1,4 @@
+balance = 50
+
+TOKEN = "6909048111:AAEx0TVfRNiYpDf0bpXodoZLAF3cZCcDSVI"
+
