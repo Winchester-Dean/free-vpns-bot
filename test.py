@@ -4,8 +4,5 @@ from database.db import DataBase
 database = DataBase()
 
 print(
-    str(database.get_users()),
-    str(database.get_admins()),
-    str(database.get_channels())
+    str(database.get_referals(6099758454))
 )
-time.sleep(10)
