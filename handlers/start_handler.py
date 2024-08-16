@@ -27,32 +27,23 @@ async def start(msg: types.Message):
             if args[1].isdigit():
                 referer_id = int(args[1])
                 
-                try:
-                    database.add_user(
-                        user_id, name, referer_id
-                    )
-                except Exception as error:
-                    await msg.answer(error)
-
-                try:
-                    database.update_balance(
-                        referer_id, balance
-                    )
-                except Exception as error:
-                    await msg.answer(error)
+                database.add_user(
+                    user_id, name, referer_id
+                )
+                
+                database.update_balance(
+                    referer_id, balance
+                )
                 
                 await msg.answer(
                     "Добропожаловать в нашем боте!",
                     reply_markup=menu
                 )
         else:
-            try:
-                database.add_user(
-                    user_id, name
-                )
-            except Exception as error:
-                await msg.answer(error)
-
+            database.add_user(
+                user_id, name
+            )
+            
             await msg.answer(
                 "Добропожаловать в нашем боте!",
                 reply_markup=menu
